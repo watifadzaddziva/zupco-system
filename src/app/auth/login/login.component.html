@@ -1,12 +1,12 @@
 <body>
     <div class="container">
         <div>
-                    <form nz-form nzLayout='vertical'  class="login-form" (ngSubmit)="submitForm()">
-                      <h2 class="text-center">Welcome!!</h2>
+                    <form nz-form  [formGroup]="form"   class="login-form" (ngSubmit)="submitForm()">
+                      <h2 class="text-center">Remote Monitoring System</h2>
                 <nz-form-item>
                     <nz-form-control nzErrorTip="Please input your email!">
                         <nz-input-group nzPrefixIcon="user" class="login-form-button ">
-                            <input [(ngModel)]="user.username" name="username" nz-input placeholder="username" />
+                            <input  formControlName="username" nz-input placeholder="username" />
                         </nz-input-group>
                     </nz-form-control>
                 </nz-form-item>
@@ -14,17 +14,16 @@
                     <nz-form-control nzErrorTip="Please input your Password!">
                         <nz-input-group nzPrefixIcon="lock" [nzSuffix]="suffixTemplate" class="login-form-button ">
                             <input style="width: 100%" nz-input [type]="view ? 'text' : 'password'" 
-                                placeholder="Password" [(ngModel)]="user.password" name="password" required />
+                                placeholder="Password"  formControlName="password" required />
                         </nz-input-group>
                         <ng-template #suffixTemplate>
-                            <!-- <i nz-icon [nzType]="view ? 'eye-invisible' : 'eye'" (click)="view = !view"
-                                class="pointer"></i> -->
+                                <span nz-icon [nzType]="view ? 'eye-invisible' : 'eye'" nzTheme="outline" (click)="view = !view" class="pointer"></span>
                         </ng-template>
                     </nz-form-control>
                 </nz-form-item>
                 <div nz-row class="login-form-margin">
                     <div nz-col [nzSpan]="16">
-                        <a style="color:rgb(0, 38, 255);"  routerLink="/forgot-password" class="login-form-forgot">Forgot password ?</a>
+                        <!-- <a style="color:rgb(0, 38, 255);"  routerLink="/forgot-password" class="login-form-forgot">Forgot password ?</a> -->
                     </div>
                 </div>
                 <button nz-button type="sumbit"  class="login-form-button " nzType="primary">Log in</button>

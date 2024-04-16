@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { DefaultService } from '../../services/default.service';
 
 @Component({
   selector: 'app-welcome',
@@ -13,7 +14,7 @@ export class WelcomeComponent {
   user!:string;
   first_name!:string;
 
-  constructor( private router:Router) {
+  constructor( private router:Router,private service:DefaultService) {
    
    }
 
@@ -23,10 +24,10 @@ export class WelcomeComponent {
 
   ngOnInit() {
 
-// if (this.authService.isAuthenticated()) {
-//     this.authService.setTokenPayload();
-//     this.user = this.authService.tokenPayload?.sub;
-//   }
+if (this.service.isAuthenticated()) {
+    this.service.setTokenPayload();
+    this.user = this.service.tokenPayload?.preferred_username;
+  }
 
   }
   openHandler(value: string): void {

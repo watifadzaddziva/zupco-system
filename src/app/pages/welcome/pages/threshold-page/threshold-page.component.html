@@ -1,0 +1,31 @@
+<div class='container'>
+    <div nz-row>
+      <div nz-col nzSpan="12" class="segment-wrapper" *ngIf="!showSetThresholdBtn">
+        <app-set-threshold [threshold]='threshold' (output)='reload($event)'></app-set-threshold>
+      </div>
+    </div>
+    <br>
+    <nz-table #basicTable [nzData]='thresholds' [nzShowPagination]="false">
+      <thead>
+        <tr>
+          <th>Current</th>
+          <th>Temperature</th>
+          <th>Vibration</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let data of basicTable.data'>
+          <td>{{data.current }} A</td>   
+          <td>{{data.temperature}}⁰C</td>
+          <td>{{data.vibrations }} G</td>
+          <td>
+            <nz-button-group  nzType="primary">
+              <app-set-threshold [threshold]='data' (output)='load($event)'></app-set-threshold>
+            </nz-button-group>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+  

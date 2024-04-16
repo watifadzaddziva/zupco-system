@@ -6,18 +6,16 @@
         <ul nz-menu   nzMode="inline" [nzInlineCollapsed]="isCollapsed">
           <li nz-submenu nzOpen nzTitle="Dashboard" >
             <ul>
+              <li   nz-menu-item routerLink="/welcome/motor">
+                <i nz-icon nzType='experiment'></i>
+                <span>Motor Data</span>
+              </li>
     
-              <li   nz-menu-item routerLink="/welcome/my-leaves">
+              <li *ngxPermissionsOnly="['PMO']"   nz-menu-item routerLink="/welcome/threshold">
                 <i nz-icon nzType='home'></i>
                 <span>Threshold</span>
               </li>
-
-              <li   nz-menu-item routerLink="/welcome/my-leaves">
-                <i nz-icon nzType='home'></i>
-                <span>Motor Data</span>
-              </li>
-  
-              <li  nz-menu-item routerLink="/welcome/reports">
+              <li *ngxPermissionsOnly="['PMO']"  nz-menu-item routerLink="/welcome/reports">
                 <i nz-icon nzType='bar-chart'></i>
                 <span>Reports</span>
               </li>           
@@ -31,10 +29,8 @@
       <nz-layout >
         <nz-header class="app-header">
           <div class="user-icon" style="margin-right: 20px;">
-            <a class="user-info" routerLink="/welcome/myAccount">
               <i nz-icon nzType="user"></i>
               <b><span>{{user | uppercase}}</span></b>
-            </a>
           </div>
         </nz-header>
         <nz-content>

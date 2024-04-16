@@ -1,0 +1,42 @@
+<br>
+<h3 class="text-center">Master Report</h3>
+<div style="float:right">
+  <button nz-button (click)='toggle(true)' nzType="primary">
+    <i nz-icon nzType="filter" style="margin-right: 8px;"></i>View Report
+  </button>
+</div>
+<div style="padding: 30px;">
+    <div style="margin-top: 40px;">
+      <!-- <app-loader *ngIf="loading"></app-loader> -->
+      <ng-container *ngIf="isLoaded">
+        <iframe [src]="safeUrl" style="width: 100%; height: calc(100vh - 260px); border: none;"></iframe>
+      </ng-container>
+    </div>
+</div>
+<nz-drawer [nzClosable]='false' [nzWidth]='400' [nzVisible]='visible' nzPlacement='right'
+[nzTitle]="'Insert Filters (Optional)'" (nzOnClose)='toggle(false)'>
+<ng-container *nzDrawerContent>
+<form nz-form [formGroup]='form' nzLayout='vertical' (ngSubmit)='submit()'>
+    <nz-form-item>
+        <nz-form-label>Select Week</nz-form-label>
+        <nz-form-control >
+          <nz-input-group >
+            <nz-range-picker formControlName="range"  (ngModelChange)="formattedChange($event)" nzFormat="yyyy-MM-dd"></nz-range-picker>
+         </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label>Select Month</nz-form-label>
+        <nz-form-control >
+          <nz-input-group >
+            <nz-date-picker nzMode="month" formControlName="month"></nz-date-picker>
+        </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+    <nz-button-group class='mt-1'>
+<button nz-button nzType='primary' type='submit'>Save</button>&nbsp;
+<button nz-button nzType='primary' (click)='toggle(false)' nzGhost type='reset'>Cancel</button>
+</nz-button-group>
+</form>
+</ng-container>
+</nz-drawer>
