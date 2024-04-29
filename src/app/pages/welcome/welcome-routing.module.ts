@@ -1,17 +1,22 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { WelcomeComponent } from './welcome.component';
-import { MotorDataComponent } from './pages/motor-data/motor-data.component';
-import { ThresholdPageComponent } from './pages/threshold-page/threshold-page.component';
-import { MasterComponent } from '../../reports/master/master.component';
+import { BusesPageComponent } from './pages/buses-page/buses-page.component';
+import { RoutesPageComponent } from './pages/routes-page/routes-page.component';
+import { DriverPageComponent } from './pages/driver-page/driver-page.component';
+import { DispatchComponent } from './components/dispatch/dispatch.component';
+import { DispatchPageComponent } from './pages/dispatch-page/dispatch-page.component';
+import { SetFuelLevelComponent } from './components/set-fuel-level/set-fuel-level.component';
 
 const routes: Routes = [
   {path: '', component:WelcomeComponent,
 children:[
-  {path:'', component:MotorDataComponent},
-  {path:'motor', component:MotorDataComponent},
-  {path:'threshold', component:ThresholdPageComponent},
-  {path:'reports', component:MasterComponent},
+  {path:'', component:BusesPageComponent},
+  {path:'bus', component:BusesPageComponent},
+  {path:'route', component:RoutesPageComponent},
+  {path:'driver', component:DriverPageComponent},
+  {path:'dispatch', component:DispatchPageComponent},
+  {path:'fuel', component:SetFuelLevelComponent}
 ]}
 ];
 

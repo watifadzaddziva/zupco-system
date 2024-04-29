@@ -1,0 +1,40 @@
+
+<div class='container'>
+    <div *ngxPermissionsOnly="['CLERK']">
+        <app-set-new-bus style="float:right" [bus]='bus' (output)='reload($event)'></app-set-new-bus>
+      </div>
+      <br>
+     <nz-table  #basicTable [nzData]='buses' [nzPageSize]='6'>
+       <thead>
+       <tr>
+         <th>Fleet Number</th>
+         <th>Driver</th>
+         <th>Driver ID</th>
+         <th>Engine Consumption Rate</th>
+         <th></th>
+       </tr>
+       </thead>
+       <tbody>
+       <tr *ngFor='let data of basicTable.data'>
+         <td>{{data.fleetNumber }} </td>
+         <td>{{data.driver?.firstName | titlecase }} {{data.driver?.lastName | titlecase }} </td>
+         <td>{{data.driver?.driverId }} </td>
+         <td>{{data.engineConsumptionRate }} </td>
+         <td>
+           <!-- <nz-button-group>
+          <app-set-new-bus [bus]='data' (output)='load($event)'></app-set-new-bus>
+          <a
+          nz-popconfirm
+          nzPopconfirmTitle="Are you sure delete this bus ?"
+          nzPopconfirmPlacement="bottom"
+          (nzOnConfirm)="confirm(data.id)"
+          nz-butto>&nbsp;
+          <button nz-button nzType="default" nzDanger><i nz-icon nzType="delete" nzTheme="outline"></i></button>
+        </a>
+           </nz-button-group> -->
+         </td>
+       </tr>
+       </tbody>
+     </nz-table>
+   </div>
+   

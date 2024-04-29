@@ -1,0 +1,28 @@
+
+<div class='container'>
+    <div *ngxPermissionsOnly="['CLERK']">
+        <app-dispatch style="float:right" [dispatch]='dispatch' (output)='reload($event)'></app-dispatch>
+      </div>
+      <br>
+     <nz-table  #basicTable [nzData]='drivers' [nzPageSize]='6' *ngxPermissionsOnly="['CLERK','ATTENDANT','MANAGER']">
+       <thead>
+       <tr>
+         <th>Driver</th>
+         <th>Driver ID</th>
+         <th>Route</th>
+         <th>Fleet Number</th>
+         <th>Allocated Fuel</th>
+       </tr>
+       </thead>
+       <tbody>
+       <tr *ngFor='let data of basicTable.data'>
+         <td>{{data?.driver?.firstName | titlecase}} {{data?.bus?.driver?.lastName | titlecase}} </td>
+         <td>{{data?.driver?.driverId}} </td>
+         <td>{{data?.route?.name }} </td>
+         <td>{{data?.fleetNumber }} </td>
+         <td>{{data?.allocatedFuel }} </td>
+       </tr>
+       </tbody>
+     </nz-table>
+   </div>
+   

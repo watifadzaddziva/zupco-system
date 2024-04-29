@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class DefaultService {
-  baseUrl='http://13.48.67.87:8025'
+  baseUrl='http://16.16.205.235:8022'
   static NAME = 'token';
   static TOKEN: string;
   token: string;
@@ -63,34 +63,65 @@ login(user :any):Observable<any>{
    
   }
 
-  postThreshold(data:any):Observable<any>{
-    return this.http.post<any>(`${this.baseUrl}/threshold/set_values`, data)
+  postBus(data:any):Observable<any>{
+    return this.http.post<any>(`${this.baseUrl}/bus/add_new`, data)
 
   }
 
-  putThreshold( data: any):Observable<any>{
-    return this.http.put<any>(`${this.baseUrl}/threshold/update_thresholds`, data)
+  putBus( data: any):Observable<any>{
+    return this.http.put<any>(`${this.baseUrl}/bus/update`, data)
   }
-  getThreshold():Observable<any>{
-    return this.http.get<any>(`${this.baseUrl}/threshold/get_current_values`)
+  getAllBus():Observable<any>{
+    return this.http.get<any>(`${this.baseUrl}/bus/get_all_buses`)
 
+  }
+
+  getAllNotDispatched(){
+    return this.http.get<any>(`${this.baseUrl}/bus/get_all_buses_not_dispatched`) 
   }
   
-  getImage():Observable<any>{
-    return this.http.get(`${this.baseUrl}/motor/image`)
-  }
-
-  getAllMotorData(): Observable<any>{
-return this.http.get(`${this.baseUrl}/motor/latest_sensor_data`)
-  }
-  getByName(){
-
-  }  
-  
-  motorReport(filter:any):Observable<any>{
-    return this.http.post<any>(`${this.baseUrl}/motor-report`,filter)
+  postRoute(data:any):Observable<any>{
+    return this.http.post<any>(`${this.baseUrl}/depot/add-routes`, data)
 
   }
+
+  putRoute( data: any):Observable<any>{
+    return this.http.put<any>(`${this.baseUrl}/depot/update_route`, data)
+  }
+  getAllRoutes():Observable<any>{
+    return this.http.get<any>(`${this.baseUrl}/depot/get_all_routes`)
+
+  }
+  postDriver(data:any):Observable<any>{
+    return this.http.post<any>(`${this.baseUrl}/driver/add_new`, data)
+
+  }
+
+  putDriver( data: any):Observable<any>{
+    return this.http.put<any>(`${this.baseUrl}/driver/update`, data)
+  }
+  getAllDrivers():Observable<any>{
+    return this.http.get<any>(`${this.baseUrl}/driver/get_all_Drivers`)
+
+  }
+
+  postDispatch(data:any):Observable<any>{
+    return this.http.post<any>(`${this.baseUrl}/depot/dispatch`, data)
+
+  }
+
+  putDispatch( data: any):Observable<any>{
+    return this.http.put<any>(`${this.baseUrl}/depot/update`, data)
+  }
+  getAllDispatch():Observable<any>{
+    return this.http.get<any>(`${this.baseUrl}/bus/get_all_dispatched_buses`)
+
+  }
+
+  getFuel():Observable<any>{
+    return this.http.get(`${this.baseUrl}/depot/get_latest_fuel_level_at_depot`)
+  }
+ 
 }
   
   

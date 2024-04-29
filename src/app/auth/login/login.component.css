@@ -1,6 +1,6 @@
 
   body {
-    background: url('/assets/best.jpeg') ;
+    background: url('/assets/zupco2.jpeg') ;
     background-attachment: fixed;
     background-size: cover;
     background-size: 100%;
@@ -27,8 +27,8 @@
   .login-form {
     margin: auto;
     padding-top: 100px;
-    width: 350px;
-    background-color: #e0e7e9dc;
+    width: 400px;
+    background-color: #e0e7e957;
     border-radius: 25px;
     box-shadow: 0 4px 6px rgba(220, 14, 14, 0.1);
     padding: 20px;
@@ -81,6 +81,6 @@
   }
 
   .text-center{
-    color:rgb(0, 60, 255);
+    color:rgb(27, 22, 70);
     text-align: center;
   }

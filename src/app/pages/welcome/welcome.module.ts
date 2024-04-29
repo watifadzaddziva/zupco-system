@@ -2,9 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { WelcomeRoutingModule } from './welcome-routing.module';
-import { SetThresholdComponent } from './components/set-threshold/set-threshold.component';
-import { MotorDataComponent } from './pages/motor-data/motor-data.component';
-import { ThresholdPageComponent } from './pages/threshold-page/threshold-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -28,12 +25,29 @@ import { NzImageModule } from 'ng-zorro-antd/image';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { SetDriverComponent } from './components/set-driver/set-driver.component';
+import { SetNewRouteComponent } from './components/set-new-route/set-new-route.component';
+import { SetNewBusComponent } from './components/set-new-bus/set-new-bus.component';
+import { DriverPageComponent } from './pages/driver-page/driver-page.component';
+import { BusesPageComponent } from './pages/buses-page/buses-page.component';
+import { RoutesPageComponent } from './pages/routes-page/routes-page.component';
+import { SetFuelLevelComponent } from './components/set-fuel-level/set-fuel-level.component';
+import { DispatchComponent } from './components/dispatch/dispatch.component';
+import { DispatchPageComponent } from './pages/dispatch-page/dispatch-page.component';
+import { NzProgressModule } from 'ng-zorro-antd/progress';
 
 @NgModule({
   declarations: [
-    SetThresholdComponent,
-    MotorDataComponent,
-    ThresholdPageComponent
+    SetDriverComponent,
+    SetNewRouteComponent,
+    SetNewBusComponent,
+    DriverPageComponent,
+    BusesPageComponent,
+    RoutesPageComponent,
+    SetFuelLevelComponent,
+    DispatchComponent,
+    DispatchPageComponent,
+    
   ],
   imports: 
   [
@@ -62,7 +76,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
    NzImageModule,
    NzAvatarModule,
    NzPaginationModule,
-   NzIconModule
+   NzIconModule,NzProgressModule
   ]
 })
 export class WelcomeModule { }

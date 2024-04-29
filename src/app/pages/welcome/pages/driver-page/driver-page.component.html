@@ -1,0 +1,38 @@
+
+<div class='container'>
+    <div *ngxPermissionsOnly="['CLERK']">
+        <app-set-driver style="float:right" [driver]='driver' (output)='reload($event)'></app-set-driver>
+      </div>
+      <br>
+     <nz-table  #basicTable [nzData]='drivers' [nzPageSize]='6'>
+       <thead>
+       <tr>
+         <th>First Name</th>
+         <th>Last Name</th>
+         <th>Driver ID</th>
+         <th></th>
+       </tr>
+       </thead>
+       <tbody>
+       <tr *ngFor='let data of basicTable.data'>
+         <td>{{data.firstName | titlecase}} </td>
+         <td>{{data.lastName | titlecase}} </td>
+         <td>{{data.driverId }} </td>
+         <td>
+           <nz-button-group>
+          <app-set-driver [driver]='data' (output)='load($event)'></app-set-driver>
+          <!-- <a
+          nz-popconfirm
+          nzPopconfirmTitle="Are you sure delete this driver ?"
+          nzPopconfirmPlacement="bottom"
+          (nzOnConfirm)="confirm(data.id)"
+          nz-butto>&nbsp;
+          <button nz-button nzType="default" nzDanger><i nz-icon nzType="delete" nzTheme="outline"></i></button>
+        </a> -->
+           </nz-button-group>
+         </td>
+       </tr>
+       </tbody>
+     </nz-table>
+   </div>
+   

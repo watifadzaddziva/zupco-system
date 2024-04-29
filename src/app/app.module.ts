@@ -30,9 +30,10 @@ import { FormlyNgZorroAntdModule } from '@ngx-formly/ng-zorro-antd';
 import { NgxPermissionsModule, NgxPermissionsService } from 'ngx-permissions';
 import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
 import { DefaultService } from './services/default.service';
-import { MasterComponent } from './reports/master/master.component';
 import { NzDrawerModule } from 'ng-zorro-antd/drawer';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
+import { PageNotFoundComponent } from './auth/page-not-found/page-not-found.component';
+import { NzResultModule } from 'ng-zorro-antd/result';
 
 registerLocaleData(en);
 
@@ -41,7 +42,8 @@ registerLocaleData(en);
     AppComponent,
     LoginComponent,
     WelcomeComponent,
-    MasterComponent
+    PageNotFoundComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -66,6 +68,7 @@ registerLocaleData(en);
   FormlyModule,
   NzDatePickerModule,
   NzDrawerModule,
+  NzResultModule,
   FormlyNgZorroAntdModule,
   NgxPermissionsModule.forRoot(),
 
