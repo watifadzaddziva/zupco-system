@@ -1,0 +1,7 @@
+
+  <form nz-form [formGroup]="form" nzLayout="vertical" (ngSubmit)="submit()" style="width:50%">
+    <formly-form [model]="dispatch" [fields]="fields" [options]="options" [form]="form"></formly-form>
+      <div>
+        <button nz-button nzType="primary" type="submit" [disabled]="form.invalid">Save</button>
+      </div>
+  </form>

@@ -37,6 +37,7 @@ import { DispatchPageComponent } from './pages/dispatch-page/dispatch-page.compo
 import { NzProgressModule } from 'ng-zorro-antd/progress';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { ShowSpeedComponent } from './pages/show-speed/show-speed.component';
+import { DispenseFuelComponent } from './components/dispense-fuel/dispense-fuel.component';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { ShowSpeedComponent } from './pages/show-speed/show-speed.component';
     DispatchComponent,
     DispatchPageComponent,
     ShowSpeedComponent,
+    DispenseFuelComponent,
     
   ],
   imports: 

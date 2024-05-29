@@ -132,6 +132,10 @@ login(user :any):Observable<any>{
 
   }
 
+  dispenseFuel(fleetNumber:any){
+    return this.http.get(`${this.baseUrl}/dispense_fuel/${fleetNumber}`)
+  }
+
   getFuel():Observable<any>{
     return this.http.get(`${this.baseUrl}/bus/fuel_summary`)
   }

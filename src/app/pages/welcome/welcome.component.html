@@ -27,6 +27,10 @@
                 <i nz-icon nzType='bar-chart'></i>
                 <span>Fuel</span>
               </li> 
+              <li *ngxPermissionsOnly="['ATTENDANT','MANAGER']"  nz-menu-item routerLink="/welcome/dispense">
+                <i nz-icon nzType='bar-chart'></i>
+                <span>Dispense Fuel</span>
+              </li>
               <li  nz-menu-item *ngxPermissionsOnly="['MANAGER','CLERK']"  routerLink="/welcome/speed">
                 <i nz-icon nzType='bar-chart'></i>
                 <span>Statistics</span>
