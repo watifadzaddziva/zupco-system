@@ -1,1 +1,23 @@
-<i nz-icon nzType="circle" [nzType]="'car'"></i> <nz-progress [nzPercent]="fuelLevel" [nzStrokeWidth]="8"></nz-progress>
+
+<div class='container'>
+    <div >
+         </div>
+      <br>
+     <nz-table  #basicTable [nzData]='fuelLevel' [nzPageSize]='6'>
+       <thead>
+       <tr>
+         <th>Fleet Number</th>
+         <th>Allocated Fuel(litres)</th>
+         <th>Remaining Fuel(litres)</th>
+       </tr>
+       </thead>
+       <tbody>
+       <tr *ngFor='let data of basicTable.data'>
+         <td>{{data.fleetNumber}}</td>
+         <td>{{data.allocatedFuel }} </td>
+         <td>{{data.remainingFuel }}</td>
+       </tr>
+       </tbody>
+     </nz-table>
+   </div>
+   

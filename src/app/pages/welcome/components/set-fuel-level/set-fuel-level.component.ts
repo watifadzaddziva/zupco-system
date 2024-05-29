@@ -7,15 +7,14 @@ import { DefaultService } from '../../../../services/default.service';
   styleUrl: './set-fuel-level.component.css'
 })
 export class SetFuelLevelComponent {
-  fuelLevel=75;
-
+  fuelLevel:any;
   constructor(private service:DefaultService){}
 
 
   ngOnInit(){
-    // this.service.getFuel().subscribe((res)=>{
-    //   this.fuelLevel=res;
-    // })
+    this.service.getFuel().subscribe((res)=>{
+      this.fuelLevel=res;
+    })
   }
 
 }

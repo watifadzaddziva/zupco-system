@@ -7,6 +7,7 @@ import { DriverPageComponent } from './pages/driver-page/driver-page.component';
 import { DispatchComponent } from './components/dispatch/dispatch.component';
 import { DispatchPageComponent } from './pages/dispatch-page/dispatch-page.component';
 import { SetFuelLevelComponent } from './components/set-fuel-level/set-fuel-level.component';
+import { ShowSpeedComponent } from './pages/show-speed/show-speed.component';
 
 const routes: Routes = [
   {path: '', component:WelcomeComponent,
@@ -16,7 +17,8 @@ children:[
   {path:'route', component:RoutesPageComponent},
   {path:'driver', component:DriverPageComponent},
   {path:'dispatch', component:DispatchPageComponent},
-  {path:'fuel', component:SetFuelLevelComponent}
+  {path:'fuel', component:SetFuelLevelComponent},
+  {path:'speed',component:ShowSpeedComponent}
 ]}
 ];
 

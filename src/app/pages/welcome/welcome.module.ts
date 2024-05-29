@@ -35,6 +35,9 @@ import { SetFuelLevelComponent } from './components/set-fuel-level/set-fuel-leve
 import { DispatchComponent } from './components/dispatch/dispatch.component';
 import { DispatchPageComponent } from './pages/dispatch-page/dispatch-page.component';
 import { NzProgressModule } from 'ng-zorro-antd/progress';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { ShowSpeedComponent } from './pages/show-speed/show-speed.component';
+
 
 @NgModule({
   declarations: [
@@ -47,6 +50,7 @@ import { NzProgressModule } from 'ng-zorro-antd/progress';
     SetFuelLevelComponent,
     DispatchComponent,
     DispatchPageComponent,
+    ShowSpeedComponent,
     
   ],
   imports: 
@@ -76,7 +80,9 @@ import { NzProgressModule } from 'ng-zorro-antd/progress';
    NzImageModule,
    NzAvatarModule,
    NzPaginationModule,
-   NzIconModule,NzProgressModule
+   NzIconModule,NzProgressModule,
+   NzPopconfirmModule,
+
   ]
 })
 export class WelcomeModule { }

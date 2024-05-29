@@ -18,17 +18,17 @@
          <td>{{data.firstName | titlecase}} </td>
          <td>{{data.lastName | titlecase}} </td>
          <td>{{data.driverId }} </td>
-         <td>
+         <td *ngxPermissionsOnly="['CLERK']">
            <nz-button-group>
-          <app-set-driver [driver]='data' (output)='load($event)'></app-set-driver>
-          <!-- <a
+          <!-- <app-set-driver [driver]='data' (output)='load($event)'></app-set-driver> -->
+          <a
           nz-popconfirm
-          nzPopconfirmTitle="Are you sure delete this driver ?"
+          nzPopconfirmTitle="Are you sure deactivate this driver ?"
           nzPopconfirmPlacement="bottom"
-          (nzOnConfirm)="confirm(data.id)"
+          (nzOnConfirm)="confirm(data.driverId)"
           nz-butto>&nbsp;
-          <button nz-button nzType="default" nzDanger><i nz-icon nzType="delete" nzTheme="outline"></i></button>
-        </a> -->
+          <button nz-button nzType="default" nzDanger>Deactivate</button>
+        </a>
            </nz-button-group>
          </td>
        </tr>

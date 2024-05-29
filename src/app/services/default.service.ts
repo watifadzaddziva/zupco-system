@@ -75,6 +75,10 @@ login(user :any):Observable<any>{
     return this.http.get<any>(`${this.baseUrl}/bus/get_all_buses`)
 
   }
+  getAllActiveBuses():Observable<any>{
+    return this.http.get<any>(`${this.baseUrl}/bus/get_active_buses`)
+
+  }
 
   getAllNotDispatched(){
     return this.http.get<any>(`${this.baseUrl}/bus/get_all_buses_not_dispatched`) 
@@ -105,6 +109,16 @@ login(user :any):Observable<any>{
 
   }
 
+  getAllUnAssignedDrivers():Observable<any>{
+    return this.http.get<any>(`${this.baseUrl}/driver/not_assigned`)
+  }
+
+  getAllActiveDrivers():Observable<any>{
+    return this.http.get<any>(`${this.baseUrl}/driver/get_active_drivers`)
+
+  }
+
+
   postDispatch(data:any):Observable<any>{
     return this.http.post<any>(`${this.baseUrl}/depot/dispatch`, data)
 
@@ -119,9 +133,25 @@ login(user :any):Observable<any>{
   }
 
   getFuel():Observable<any>{
-    return this.http.get(`${this.baseUrl}/depot/get_latest_fuel_level_at_depot`)
+    return this.http.get(`${this.baseUrl}/bus/fuel_summary`)
   }
  
+  deactivateDriver(id:any):Observable<any>{
+    return this.http.delete(`${this.baseUrl}/driver/deactivate_driver?id=${id}`)
+  }
+
+  deactivateBus(id:any):Observable<any>{
+    return this.http.delete(`${this.baseUrl}/bus/deactivate_bus?id=${id}`)
+  }
+
+  showFuelLevel():Observable<any>{
+    return this.http.get(`${this.baseUrl}/depot/get_latest_fuel_level_at_depot`)
+  }
+
+  showSpeed():Observable<any>{
+    return this.http.get(`${this.baseUrl}/bus/get_speed`)
+
+  }
 }
   
   

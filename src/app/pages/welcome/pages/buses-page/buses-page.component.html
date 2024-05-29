@@ -10,7 +10,7 @@
          <th>Fleet Number</th>
          <th>Driver</th>
          <th>Driver ID</th>
-         <th>Engine Consumption Rate</th>
+         <th>Engine Consumption Rate(km/l)</th>
          <th></th>
        </tr>
        </thead>
@@ -19,19 +19,19 @@
          <td>{{data.fleetNumber }} </td>
          <td>{{data.driver?.firstName | titlecase }} {{data.driver?.lastName | titlecase }} </td>
          <td>{{data.driver?.driverId }} </td>
-         <td>{{data.engineConsumptionRate }} </td>
-         <td>
-           <!-- <nz-button-group>
-          <app-set-new-bus [bus]='data' (output)='load($event)'></app-set-new-bus>
+         <td>{{data.engineConsumptionRate}} </td>
+         <td *ngxPermissionsOnly="['CLERK']">
+           <nz-button-group>
+          <!-- <app-set-new-bus [bus]='data' (output)='load($event)'></app-set-new-bus> -->
           <a
           nz-popconfirm
-          nzPopconfirmTitle="Are you sure delete this bus ?"
+          nzPopconfirmTitle="Are you sure deactivate this bus ?"
           nzPopconfirmPlacement="bottom"
-          (nzOnConfirm)="confirm(data.id)"
+          (nzOnConfirm)="confirm(data.fleetNumber)"
           nz-butto>&nbsp;
-          <button nz-button nzType="default" nzDanger><i nz-icon nzType="delete" nzTheme="outline"></i></button>
+          <button nz-button nzType="default" nzDanger>Deactivate</button>
         </a>
-           </nz-button-group> -->
+           </nz-button-group>
          </td>
        </tr>
        </tbody>

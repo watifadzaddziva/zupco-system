@@ -68,7 +68,7 @@ submit() {
 }
 
 getDrivers(){
-  this.service.getAllDrivers().subscribe(res=>{
+  this.service.getAllUnAssignedDrivers().subscribe(res=>{
     this.drivers=res.map((driver:any)=>{
       return { label: `${driver.firstName} ${driver.lastName}`, value: driver.driverId };
     })

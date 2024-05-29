@@ -28,7 +28,7 @@ export class DriverPageComponent {
   }
 
   load(event?:number){
-    this.service.getAllDrivers().subscribe((res)=>{
+    this.service.getAllActiveDrivers().subscribe((res)=>{
       this.drivers= res
     })
   }
@@ -39,10 +39,10 @@ this.driver={};
   }
 
   confirm(id: number): void {
-  //   this.service.deleteDepartment(id).subscribe(() => {
-  //     this.nzMessageService.info('department has been deleted');
-  //     this.load();
-  //   });
+    this.service.deactivateDriver(id).subscribe(() => {
+      this.nzMessageService.info('driver has been deactivated');
+      this.load();
+    });
   }
 
 }

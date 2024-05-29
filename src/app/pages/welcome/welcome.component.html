@@ -23,10 +23,14 @@
                 <i nz-icon nzType='bar-chart'></i>
                 <span>Dispatch</span>
               </li>    
-              <li *ngxPermissionsOnly="['ATTENDANT']"  nz-menu-item routerLink="/welcome/fuel">
+              <li *ngxPermissionsOnly="['ATTENDANT','MANAGER']"  nz-menu-item routerLink="/welcome/fuel">
                 <i nz-icon nzType='bar-chart'></i>
-                <span>Fuel Level</span>
-              </li>         
+                <span>Fuel</span>
+              </li> 
+              <li  nz-menu-item *ngxPermissionsOnly="['MANAGER','CLERK']"  routerLink="/welcome/speed">
+                <i nz-icon nzType='bar-chart'></i>
+                <span>Statistics</span>
+              </li>        
             </ul>
           </li>
         </ul>

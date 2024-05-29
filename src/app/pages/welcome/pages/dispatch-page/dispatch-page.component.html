@@ -11,14 +11,14 @@
          <th>Driver ID</th>
          <th>Route</th>
          <th>Fleet Number</th>
-         <th>Allocated Fuel</th>
+         <th>Allocated Fuel(litres)</th>
        </tr>
        </thead>
        <tbody>
        <tr *ngFor='let data of basicTable.data'>
-         <td>{{data?.driver?.firstName | titlecase}} {{data?.bus?.driver?.lastName | titlecase}} </td>
+         <td>{{data?.driver?.firstName | titlecase}} {{data?.driver?.lastName | titlecase}} </td>
          <td>{{data?.driver?.driverId}} </td>
-         <td>{{data?.route?.name }} </td>
+         <td>{{data?.route?.fromDestination | titlecase}}-{{data?.route?.toDestination | titlecase}} </td>
          <td>{{data?.fleetNumber }} </td>
          <td>{{data?.allocatedFuel }} </td>
        </tr>

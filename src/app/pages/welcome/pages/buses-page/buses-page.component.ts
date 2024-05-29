@@ -34,7 +34,7 @@ export class BusesPageComponent {
   }
 
   load(event?:number){
-    this.service.getAllBus().subscribe((res)=>{
+    this.service.getAllActiveBuses().subscribe((res)=>{
       this.buses= res
     })
   }
@@ -45,10 +45,10 @@ this.bus={};
   }
 
   confirm(id: number): void {
-    // this.service.deleteDepartment(id).subscribe(() => {
-    //   this.nzMessageService.info('department has been deleted');
-    //   this.load();
-    // });
+    this.service.deactivateBus(id).subscribe(() => {
+      this.nzMessageService.info('Bus has been Deactivated');
+      this.load();
+    });
   }
 
 }

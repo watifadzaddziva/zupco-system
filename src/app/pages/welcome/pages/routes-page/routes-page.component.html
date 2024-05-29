@@ -8,19 +8,19 @@
        <thead>
        <tr>
          <th>Route</th>
-         <th>Distance</th>
-         <th></th>
+         <th>Distance(km)</th>
+         <!-- <th></th> -->
        </tr>
        </thead>
        <tbody>
        <tr *ngFor='let data of basicTable.data'>
          <td>{{data.fromDestination | titlecase}} - {{data.toDestination | titlecase}}</td>
-         <td>{{data.distance }}Km </td>
-         <td>
+         <td>{{data.distance }} </td>
+         <!-- <td>
            <nz-button-group>
           <app-set-new-route [route]='data' (output)='load($event)'></app-set-new-route>
            </nz-button-group>
-         </td>
+         </td> -->
        </tr>
        </tbody>
      </nz-table>

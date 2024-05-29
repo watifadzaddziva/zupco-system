@@ -34,7 +34,9 @@ import { NzDrawerModule } from 'ng-zorro-antd/drawer';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { PageNotFoundComponent } from './auth/page-not-found/page-not-found.component';
 import { NzResultModule } from 'ng-zorro-antd/result';
-
+import { FusionChartsModule } from 'angular-fusioncharts';
+import * as FusionCharts from 'fusioncharts';
+import * as Widgets from 'fusioncharts/fusioncharts.widgets';
 registerLocaleData(en);
 
 @NgModule({
@@ -71,6 +73,7 @@ registerLocaleData(en);
   NzResultModule,
   FormlyNgZorroAntdModule,
   NgxPermissionsModule.forRoot(),
+  FusionChartsModule.forRoot(FusionCharts, Widgets)
 
   ],
   providers: [ NzNotificationService, DefaultService, JwtHelperService,NgxPermissionsService,DatePipe,
